@@ -8,6 +8,7 @@ class FullPost extends Component {
     }
 
     componentDidMount() {
+        console.log("this.props = ", this.props)
         if (this.props.match.params.id) {
             if (!this.state.loadedPost ||
                 (this.state.loadedPost && this.state.loadedPost.id !== this.props.id)) {
@@ -30,6 +31,7 @@ class FullPost extends Component {
         let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>
 
         if (this.props.id) {
+            
             post = <p style={{ textAlign: 'center' }}>Loading...!</p>
         }
         if (this.state.loadedPost) {
